@@ -107,6 +107,7 @@ These were steps for setting up the Python environment. Now that you have done t
 >
 > Logout of COLA computers and log back in.
 > Activate your Python environment.
+> Run the `metpy` example again.
 >
 {: .challenge}
 
