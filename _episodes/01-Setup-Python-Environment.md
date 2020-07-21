@@ -27,6 +27,12 @@ distance = np.arange(1, 5) * units.meters
 ~~~
 {: .language-python}
 
+~~~
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ModuleNotFoundError: No module named 'metpy'
+~~~
+{: .error}
 What happened?  `MetPy` is not installed on the COLA computers.  What can we do about it?  We can setup our own Python environment that allows use to control what packages and versions are available to import in our Python programs.
 
 #### Some other reasons why we need our own Python environment rather than relying on the default installation on COLA computers:
