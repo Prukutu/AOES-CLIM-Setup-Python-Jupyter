@@ -36,15 +36,15 @@ ModuleNotFoundError: No module named 'metpy'
 {: .error}
 What happened?  `MetPy` is not installed on the COLA computers.  What can we do about it?  We can setup our own Python environment that allows use to control what packages and versions are available to import in our Python programs.
 
-#### Some other reasons why we need our own Python environment rather than relying on the default installation on COLA computers:
+Some other reasons why we need our own Python environment rather than relying on the default installation on COLA computers:
 * I found a nice example for plotting my data by searching the internet and I tried it, but the Python package in the example is not installed on COLA computers.  
 * I found a function in a Python package that does exactly what I need.  It would save me so much time to use it rather than write my own, but the package version on the COLA computers is old and does not have this new function. 
 * I want to preserve the exact packages and versions of packages I used in my data analysis so that others can use my codes or so I can reproduce all my analysis when my paper comes back from review.
 
 
-### Install our own Python environment
+## Install our own Python environment
 
-#### 1. Log into a COLA Server and execute the following from the Unix shell in your home directory
+1. Log into a COLA Server and execute the following from the Unix shell in your home directory
 
 ~~~
 $ git clone https://github.com/kpegion/Pangeo-at-AOES.git
@@ -61,7 +61,7 @@ This gets some files from a code repository I created on Github. Before we go fu
 >
 {: .discussion}
 
-#### 2. Change directory to Pangeo-at-AOES
+2. Change directory to Pangeo-at-AOES
 ~~~
 $ cd Pangeo-at-AOES 
 ~~~
@@ -76,31 +76,32 @@ $ cd Pangeo-at-AOES
 >
 {: .challenge}
 
-#### 3. Load the version of Python installed on the COLA Computers
+3. Load the version of Python installed on the COLA Computers
 ~~~
 $ cd module load anaconda/3
 ~~~
 {: .language-bash}
 
-#### 4. Create your Python environment
+4. Create your Python environment
 ~~~
 $ conda env create -f environment.yml
 ~~~
 {: .language-bash}
 
-#### 5. Execute the following command so that your new environment is not initialized by default on login
+5. Execute the following command so that your new environment is not initialized by default on login
 ~~~
 $ conda config --set auto_activate_base false
 ~~~
 {: .language-bash}
 
-#### 6. Activate the environment so you can work in Python with the packages:
+6. Activate the environment so you can work in Python with the packages:
 ~~~
 $ conda activate aoes
 ~~~
 {: .language-bash}
 
-### What to do now that my environment is setup
+## What to do now that my environment is setup
+
 These were steps for setting up the Python environment. Now that you have done them, next time you login to COLA computers, all you need to do is the final step of activating the environment.  
 
 > ## Login and activate your environment
