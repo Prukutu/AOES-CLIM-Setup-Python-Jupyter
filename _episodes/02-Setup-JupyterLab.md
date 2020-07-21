@@ -99,3 +99,13 @@ jupyter lab –no-browser –ip=`hostname` –port=8878 [I 14:12:20.887 LabApp] 
 
 9. In the upper right corner, you will see your current environemnt is Python (aoes). 
 If it only says Python, click on Python and a menu will appear. Select Python (aoes)
+
+## What do I do now that JupyterLab is setup?
+
+Now that you have completed the setup process, you need to execute steps 5,6,and 7 when you want to run JupyterLab.
+
+> ## Test that you can login and launch JupyterLab
+>
+>  Logout of COLA computers.  Login again and launch JupyterLab
+>
+{: .challenge}
