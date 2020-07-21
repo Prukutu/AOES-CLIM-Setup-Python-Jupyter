@@ -11,6 +11,10 @@ objectives:
 - "Explain what you can do with JupyterLab"
 keypoints:
 - "JupyterLab is an interactive Python interface that is ideal for scientific work"
+- "Launching JupyterLab is a multi-step process"
+- "Launch the server on a COLA computer `jupyter lab --no-browser --ip=`hostname` --port=8878`"
+- "Login to COLA computer with special login line: `ssh -N -L 8878:colaX.gmu.edu:8878 <YOURUSERNAME>@colaX.gmu.edu`"
+- "Open JupyterLab in your web browser: http://localhost:8878" 
 ---
 ## Why do we need to setup another program? 
 
