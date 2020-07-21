@@ -11,7 +11,8 @@ objectives:
 keypoints:
 - "Python requires packages to be imported"
 - "A Python environment defines packages that are available for import"
-- "An environment is invoked using the `conda activate` command"
+- "A Python environment is invoked using the `conda activate` command"
+- "Activate the Python environment for this class with `conda activate aoes` whenever you login to COLA computers"
 ---
 ### Why do I need to setup a Python environment?
 Python requires users to `import` packages to be used and almost everything requires a package. Recall in the previous lesson, we used the `import numpy` command.  We were able to do this because `numpy` is setup on the COLA computers. That is not always the case. Here's an example:
