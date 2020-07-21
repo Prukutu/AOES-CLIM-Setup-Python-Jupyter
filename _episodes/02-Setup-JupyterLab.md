@@ -1,5 +1,5 @@
 ---
-title: "Setting up Jupyter Lab"
+title: "Setting up JupyterLab"
 teaching: 5
 exercises: 0
 questions:
