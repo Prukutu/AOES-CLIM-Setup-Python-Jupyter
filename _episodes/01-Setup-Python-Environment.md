@@ -1,5 +1,5 @@
 ---
-title: "Setting up Python and Jupyter Lab"
+title: "Setting up a Python Environment"
 teaching: 5
 exercises: 0
 questions:
