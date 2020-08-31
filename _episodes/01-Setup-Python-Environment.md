@@ -44,7 +44,7 @@ Some other reasons why we need our own Python environment rather than relying on
 
 ## Install our own Python environment
 
-1. Log into a COLA Server and execute the following from the Unix shell in your home directory
+#### 1. Log into a COLA Server and execute the following from the Unix shell in your home directory
 
 ~~~
 $ git clone https://github.com/kpegion/Pangeo-at-AOES.git
@@ -61,7 +61,7 @@ This gets some files from a code repository I created on Github. Before we go fu
 >
 {: .discussion}
 
-2. Change directory to Pangeo-at-AOES
+#### 2. Change directory to Pangeo-at-AOES
 
 ~~~
 $ cd Pangeo-at-AOES 
@@ -77,28 +77,28 @@ $ cd Pangeo-at-AOES
 >
 {: .challenge}
 
-3. Load the version of Python installed on the COLA Computers
+#### 3. Load the version of Python installed on the COLA Computers
 
 ~~~
 $ module load anaconda/3
 ~~~
 {: .language-bash}
 
-4. Create your Python environment
+#### 4. Create your Python environment
 
 ~~~
 $ conda env create -f environment.yml
 ~~~
 {: .language-bash}
 
-5. Execute the following command so that your new environment is not initialized by default on login
+#### 5. Execute the following command so that your new environment is not initialized by default on login
 
 ~~~
 $ conda config --set auto_activate_base false
 ~~~
 {: .language-bash}
 
-6. Activate the environment so you can work in Python with the packages:
+#### 6. Activate the environment so you can work in Python with the packages:
 
 ~~~
 $ conda activate aoes
