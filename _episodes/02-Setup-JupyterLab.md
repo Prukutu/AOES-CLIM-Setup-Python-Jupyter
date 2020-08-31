@@ -24,7 +24,7 @@ Let's set it up and see what it can do!
 
 ## Setup JupyterLab on COLA Computers
 
-Setup a password for Jupyter.  This will be different from your COLA or Mason passwords.
+#### 1. Setup a password for Jupyter.  This will be different from your COLA or Mason passwords.
 
 ~~~
 $ jupyter notebook --generate-config
@@ -32,79 +32,75 @@ $ jupyter notebook password
 ~~~
 {: .language-bash}
 
-Issue the following command so that your new Python environment will be available in Jupyter
+#### 2. Issue the following command so that your new Python environment will be available in Jupyter
 
 ~~~
 $ python -m ipykernel install --user --name aoes --display-name "Python (aoes)"
 ~~~
 {: .language-bash}
 
-Login to a COLA computer (X refers to the computer number)
+#### 3. Login to a COLA computer (X refers to the computer number)
 
 ~~~
 $ ssh -Y -l <YOURUSERNAME>@colaX.gmu.edu
 ~~~
 {: .language-bash}
 
-Go to the Pangeo-at-AOES directory
+#### 4. Go to the Pangeo-at-AOES directory
 
 ~~~
 $ cd Pangeo-at-AOES
 ~~~
 {: .language-bash}
 
-Start the Jupyter server with the following command
+#### 5. Start the Jupyter server with the following command
 
 ~~~
 $ jupyter lab --no-browser --ip=`hostname` --port=8878
 ~~~
 {: .language-bash}
 
-In a separate XQuartz or MobusXterm window, log in to cola6 again with the following command
+#### 6. In a separate XQuartz or MobusXterm window, log into cola6 again with the following command
 
 ~~~
 $ ssh -N -L 8878:colaX.gmu.edu:8878 <YOURUSERNAME>@colaX.gmu.edu
 ~~~
 {: .language-bash}
+Nothing will happen after you type your password
 
-> ## What can go wrong here? 
->
-> You must use the same COLA server in this step as you did in step 3. If you do not, 
-> then you get an invalid credentials error when you attempt to login to Jupyter.
->
-{: .callout}
-
-Open a web browser and go to  http://localhost:8878. It will ask you to enter the password you created in step 1.
-
+#### 7. Open a web browser and go to  http://localhost:8878. It will ask you to enter the password you created in step 1.
 Jupyter will appear in your local browser
 
 > ## What can go wrong here?
 >
-> There are various errors that can happen that will not allow the Jupyter to launch properly
+> There are various errors that can happen that will not allow the Jupyter to launch properly:
 >
 > ~~~
 > Traceback (most recent call last): File “/homes/sknapp4/.conda/envs/aoes/lib/python3.6/site-packages/traitlets/traitlets.py”, line 528, in get value = obj._trait_values[self.name] KeyError: ‘allow_remote_access’
 > ~~~
 > {: .error}
-> Repeat step 6 with the following command instead
+>
+> Solution:  Repeat step 6  with the following command instead
+>
 > ~~~
 > $ ssh -N -L 8878:colaX.gmu.edu:8878 <YOURUSERNAME>@colaX.gmu.edu
 > ~~~
-
+>
 > If you get an Invalid Credentials error, check the messages on the screen where you launched `jupyter lab ` Sometimes port 8878 is in use and it will find a different port. The error messages will tell you which port you should use.
-
+>
 > These errors messages look like:
 > ~~~
 jupyter lab –no-browser –ip=`hostname` –port=8878 [I 14:12:20.887 LabApp] The port 8878 is already in use, trying another port.
 > ~~~
 > {: .language-bash}
-> Repeat step 6 using the reccomended port.
 >
-> {: .callout}
+> Solution: Repeat step 6 using the reccomended port.
+>
+{: .callout}
 
 
-In the upper right corner, you will see your current environemnt is Python (aoes). 
-If it only says Python, click on Python and a menu will appear. Select Python (aoes)
+#### 8. In the upper right corner, you will see your current environemnt is Python (aoes). 
+If it only says Python, click on Python and a menu will appear. Select Python (aoes).
 
 ## What do I do now that JupyterLab is setup?
 
