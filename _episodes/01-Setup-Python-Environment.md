@@ -1,6 +1,6 @@
 ---
 title: "Setting up a Python Environment"
-teaching: 5
+teaching: 0
 exercises: 0
 questions:
 - "How do I setup my own Python environment on COLA?"
