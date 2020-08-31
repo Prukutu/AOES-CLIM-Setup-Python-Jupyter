@@ -55,13 +55,14 @@ This gets some files from a code repository I created on Github. Before we go fu
 
 > ## Be careful what you download
 >
-> Its a good idea to be careful about what we download.  Fortunately, I would not have you download anything
+> Its a good idea to be careful about what you download.  Fortunately, I would not have you download anything
 > dangerous.  To see for yourself where we downloaded from, 
-> go to https://github.com/kpegion/Pangeo-at-AOES.git in your web browser and take a look.
+> go to (https://github.com/kpegion/Pangeo-at-AOES.git) in your web browser and take a look.
 >
 {: .discussion}
 
 2. Change directory to Pangeo-at-AOES
+
 ~~~
 $ cd Pangeo-at-AOES 
 ~~~
@@ -77,24 +78,28 @@ $ cd Pangeo-at-AOES
 {: .challenge}
 
 3. Load the version of Python installed on the COLA Computers
+
 ~~~
 $ cd module load anaconda/3
 ~~~
 {: .language-bash}
 
 4. Create your Python environment
+
 ~~~
 $ conda env create -f environment.yml
 ~~~
 {: .language-bash}
 
 5. Execute the following command so that your new environment is not initialized by default on login
+
 ~~~
 $ conda config --set auto_activate_base false
 ~~~
 {: .language-bash}
 
 6. Activate the environment so you can work in Python with the packages:
+
 ~~~
 $ conda activate aoes
 ~~~
