@@ -80,10 +80,10 @@ Jupyter will appear in your local browser
 > ~~~
 > {: .error}
 >
-> Solution:  Repeat step 6  with the following command instead
+> Solution: Try launching Jupyter with the following command
 >
 > ~~~
-> $ ssh -N -L 8878:colaX.gmu.edu:8878 <YOURUSERNAME>@colaX.gmu.edu
+> $ jupyter lab –no-browser –ip=’0.0.0.0’ –port=8878
 > ~~~
 >
 > If you get an Invalid Credentials error, check the messages on the screen where you launched `jupyter lab ` Sometimes port 8878 is in use and it will find a different port. The error messages will tell you which port you should use.
