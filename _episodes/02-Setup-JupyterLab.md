@@ -24,18 +24,17 @@ Let's set it up and see what it can do!
 
 ## Setup JupyterLab on COLA Computers
 
-#### 1. Setup a password for Jupyter.  This will be different from your COLA or Mason passwords.
+#### 1. Load the anaconda module
+~~~
+$ module load anaconda/3
+~~~
+{: .language-bash}
+
+#### 2. Setup a password for Jupyter.  This will be different from your COLA or Mason passwords.
 
 ~~~
 $ jupyter notebook --generate-config
 $ jupyter notebook password
-~~~
-{: .language-bash}
-
-#### 2. Issue the following command so that your new Python environment will be available in Jupyter
-
-~~~
-$ python -m ipykernel install --user --name aoes --display-name "Python (aoes)"
 ~~~
 {: .language-bash}
 
@@ -46,21 +45,14 @@ $ ssh -Y -l <YOURUSERNAME>@colaX.gmu.edu
 ~~~
 {: .language-bash}
 
-#### 4. Go to the Pangeo-at-AOES directory
-
-~~~
-$ cd Pangeo-at-AOES
-~~~
-{: .language-bash}
-
-#### 5. Start the Jupyter server with the following command
+#### 4. Start the Jupyter server with the following command
 
 ~~~
 $ jupyter lab --no-browser --ip=`hostname` --port=8878
 ~~~
 {: .language-bash}
 
-#### 6. In a separate XQuartz or MobusXterm window, log into cola6 again with the following command
+#### 5. In a separate XQuartz or MobusXterm window, log into cola6 again with the following command
 
 ~~~
 $ ssh -N -L 8878:colaX.gmu.edu:8878 <YOURUSERNAME>@colaX.gmu.edu
@@ -68,7 +60,7 @@ $ ssh -N -L 8878:colaX.gmu.edu:8878 <YOURUSERNAME>@colaX.gmu.edu
 {: .language-bash}
 Nothing will happen after you type your password
 
-#### 7. Open a web browser and go to  http://localhost:8878. It will ask you to enter the password you created in step 1.
+#### 6. Open a web browser and go to  http://localhost:8878. It will ask you to enter the password you created in step 1.
 Jupyter will appear in your local browser
 
 > ## What can go wrong here?
