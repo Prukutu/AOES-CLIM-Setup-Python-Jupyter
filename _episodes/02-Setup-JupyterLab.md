@@ -99,7 +99,6 @@ jupyter lab –no-browser –ip=`hostname` –port=8878 [I 14:12:20.887 LabApp] 
 > {: .language-bash}
 > Repeat step 6 using the reccomended port.
 
-{: .callout}
 
 9. In the upper right corner, you will see your current environemnt is Python (aoes). 
 If it only says Python, click on Python and a menu will appear. Select Python (aoes)
