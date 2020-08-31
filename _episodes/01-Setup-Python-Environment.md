@@ -80,7 +80,7 @@ $ cd Pangeo-at-AOES
 3. Load the version of Python installed on the COLA Computers
 
 ~~~
-$ cd module load anaconda/3
+$ module load anaconda/3
 ~~~
 {: .language-bash}
 
