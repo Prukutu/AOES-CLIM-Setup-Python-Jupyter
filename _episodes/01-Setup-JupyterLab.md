@@ -13,7 +13,7 @@ keypoints:
 - "JupyterLab is an interactive Python interface that is ideal for scientific work"
 - "Launching JupyterLab is a multi-step process"
 - "Launch the server on a COLA computer `jupyter lab --no-browser --ip=`hostname` --port=8878`"
-- "Login to COLA computer with special login line: `ssh -N -L 8878:colaX.gmu.edu:8878 <YOURUSERNAME>@colaX.gmu.edu`"
+- "Login to COLA computer with special login line: `ssh -N -L 8878:colaX.gmu.edu:8878 YOURUSERNAME@colaX.gmu.edu`"
 - "Open JupyterLab in your web browser: http://localhost:8878" 
 ---
 ## Why do we need to setup another program? 
@@ -24,24 +24,25 @@ Let's set it up and see what it can do!
 
 ## Setup JupyterLab on COLA Computers
 
-#### 1. Load the anaconda module
+#### 1. Login to a COLA computer (X refers to the computer number)
+
+~~~
+$ ssh -Y -l YOURUSERNAME colaX.gmu.edu
+~~~
+{: .language-bash}
+
+
+#### 2. Load the anaconda module
 ~~~
 $ module load anaconda/3
 ~~~
 {: .language-bash}
 
-#### 2. Setup a password for Jupyter.  This will be different from your COLA or Mason passwords.
+#### 3. Setup a password for Jupyter.  This will be different from your COLA or Mason passwords.
 
 ~~~
 $ jupyter notebook --generate-config
 $ jupyter notebook password
-~~~
-{: .language-bash}
-
-#### 3. Login to a COLA computer (X refers to the computer number)
-
-~~~
-$ ssh -Y -l <YOURUSERNAME>@colaX.gmu.edu
 ~~~
 {: .language-bash}
 
@@ -55,7 +56,7 @@ $ jupyter lab --no-browser --ip=`hostname` --port=8878
 #### 5. In a separate XQuartz or MobusXterm window, log into cola6 again with the following command
 
 ~~~
-$ ssh -N -L 8878:colaX.gmu.edu:8878 <YOURUSERNAME>@colaX.gmu.edu
+$ ssh -N -L 8878:colaX.gmu.edu:8878 YOURUSERNAME@colaX.gmu.edu
 ~~~
 {: .language-bash}
 Nothing will happen after you type your password
