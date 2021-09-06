@@ -46,27 +46,31 @@ $ jupyter notebook password
 ~~~
 {: .language-bash}
 
-#### 4. Start the Jupyter server with the following command
+#### 4. Start the Jupyter server with the following command (which asks for port 8878)
 
 ~~~
 $ jupyter lab --no-browser --ip=`hostname` --port=8878
 ~~~
 {: .language-bash}
 
-> ## Pay attention here if port 8878 is busy you might get assigned a different port automatically
+> ## Pay attention here, if port 8878 is busy you might automatically get assigned a different port
+> For example: 
 > ~~~
 >[I 19:01:58.026 LabApp] The Jupyter Notebook is running at:
 >[I 19:01:58.026 LabApp] http://cola1.gmu.edu:8879/
 > ~~~
 {: .callout}
 
-#### 5. In a separate XQuartz or MobusXterm window, log into cola6 again with the following command
+#### 5. In a separate XQuartz or MobusXterm window, log into the <u>same</u> cola machine (colaX) again with the following command
 
 ~~~
 $ ssh -N -L 8878:colaX.gmu.edu:8878 YOURUSERNAME@colaX.gmu.edu
 ~~~
 {: .language-bash}
 Nothing will happen after you type your password
+
+> ## Again pay attention, make that you specified the same cola machine and port in step 4 and 5.
+{: .callout}
 
 #### 6. Open a web browser and go to  http://localhost:8878. It will ask you to enter the password you created in step 1.
 Jupyter will appear in your local browser
