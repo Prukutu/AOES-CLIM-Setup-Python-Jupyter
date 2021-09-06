@@ -53,6 +53,13 @@ $ jupyter lab --no-browser --ip=`hostname` --port=8878
 ~~~
 {: .language-bash}
 
+> ## Pay attention here if port 8878 is busy you might get assigned a different port automatically
+> ~~~
+>[I 19:01:58.026 LabApp] The Jupyter Notebook is running at:
+>[I 19:01:58.026 LabApp] http://cola1.gmu.edu:8879/
+> ~~~
+{: .callout}
+
 #### 5. In a separate XQuartz or MobusXterm window, log into cola6 again with the following command
 
 ~~~
