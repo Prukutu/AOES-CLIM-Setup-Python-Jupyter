@@ -103,8 +103,8 @@ jupyter lab –no-browser –ip=`hostname` –port=8878 [I 14:12:20.887 LabApp] 
 {: .callout}
 
 
-#### 8. In the upper right corner, you will see your current environemnt is Python (aoes). 
-If it only says Python, click on Python and a menu will appear. Select Python (aoes).
+#### 8. In the upper right corner, you will see your current environment. 
+You may have others but we will start by using the default "Python 3" environment.
 
 ## What do I do now that JupyterLab is setup?
 
