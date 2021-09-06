@@ -78,7 +78,7 @@ Jupyter will appear in your local browser
 
 > ## What can go wrong here?
 >
-> There are various errors that can happen that will not allow the Jupyter to launch properly:
+> There are various errors that can happen that will not allow Jupyter to launch properly:
 >
 > ~~~
 > Traceback (most recent call last): File “/homes/sknapp4/.conda/envs/aoes/lib/python3.6/site-packages/traitlets/traitlets.py”, line 528, in get value = obj._trait_values[self.name] KeyError: ‘allow_remote_access’
