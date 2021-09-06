@@ -69,7 +69,8 @@ $ ssh -N -L 8878:colaX.gmu.edu:8878 YOURUSERNAME@colaX.gmu.edu
 {: .language-bash}
 Nothing will happen after you type your password
 
-> ## Again pay attention, make that you specified the same cola machine and port in step 4 and 5.
+> ## Again pay attention!
+> Make sure that in steps 4 and 5 same cola machine and port is being used.
 {: .callout}
 
 #### 6. Open a web browser and go to  http://localhost:8878. It will ask you to enter the password you created in step 1.
