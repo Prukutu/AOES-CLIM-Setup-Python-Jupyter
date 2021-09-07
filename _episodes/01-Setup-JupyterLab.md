@@ -46,12 +46,16 @@ $ jupyter notebook password
 ~~~
 {: .language-bash}
 
-#### 4. Start the Jupyter server with the following command (which asks for port 8878)
+#### 4. Start the Jupyter <u>server</u> with the following command (which asks for port 8878)
 
 ~~~
-$ jupyter lab --no-browser --ip=`hostname` --port=8878
+$ nohup jupyter lab --no-browser --ip=`hostname` --port=8878 &
 ~~~
 {: .language-bash}
+
+`nohup` means "don't hang up", i.e., keep the process running even if your terminal session loses its connection
+(handy to prevent your work being lost, and allowing you to pick up later where you left off).
+The `&` at the end puts the process in the _background_, freeing up your command line to be used.
 
 > ## Pay attention here, if port 8878 is busy you might automatically get assigned a different port
 > For example: 
@@ -61,20 +65,44 @@ $ jupyter lab --no-browser --ip=`hostname` --port=8878
 > ~~~
 {: .callout}
 
-#### 5. In a separate XQuartz or MobusXterm window, log into the <u>same</u> cola machine (colaX) again with the following command
+Check that your process is running (a good thing to do if you are not sure whether you already have a Jupyter lab session running on the server:
+
+~~~
+$ ps -u YORUSERNAME
+~~~
+{: .language-bash}
+
+You should see one and only one enstantiation of jupyter-lab running. 
+If you see more than one, then you should kill all the duplicate processes and relaunch the Jupyter server.
+Specific processes can be killed by their process ID (PID), e.g.:
+
+~~~
+$ kill -9 11404
+~~~
+{: .language-bash}
+
+Kill your process with PID = 11404. The `-9` means to _kill with extreme prejudice_!
+
+
+#### 5. Start the Jupyter <u>client</u> on your laptop
+
+In a separate XQuartz or MobusXterm window, log into the <u>same</u> cola machine (colaX) again with the following command
 
 ~~~
 $ ssh -N -L 8878:colaX.gmu.edu:8878 YOURUSERNAME@colaX.gmu.edu
 ~~~
 {: .language-bash}
-Nothing will happen after you type your password
+Nothing will appear to happen after you type your password. This is OK. You now have the Jupyter client running on your laptop. 
 
 > ## Again pay attention!
-> Make sure that in steps 4 and 5 same cola machine and port is being used.
+> Make sure that in steps 4 and 5 <u>same</u> cola machine and port is being used.
 {: .callout}
 
-#### 6. Open a web browser and go to  http://localhost:8878. It will ask you to enter the password you created in step 1.
-Jupyter will appear in your local browser
+
+#### 6. Connect your Jupyter client to the Jupyter server on the COLA system
+
+Open a web browser and go to  http://localhost:8878 (again, make sure the port number is correct). You will be asked to enter the password you created in step 1.
+Jupyter will appear in your local browser.
 
 > ## What can go wrong here?
 >
@@ -103,9 +131,13 @@ jupyter lab –no-browser –ip=`hostname` –port=8878 [I 14:12:20.887 LabApp] 
 >
 {: .callout}
 
+Your Jupyter client should continue running on the COLA server until you either kill the process yourself, or that machine gets rebooted.
+However, your _client_ may stop if you lose your Internet connection, reboot your laptop, shut down your laptop, even close your laptop for more than a few minutes,... 
+But all you have to do is relaunch your client (Step 5 above) and your Jupyter browser session should re-establish itself right where you left off.
 
 #### 8. In the upper right corner, you will see your current environment. 
 You may have others but we will start by using the default "Python 3" environment.
+
 
 ## What do I do now that JupyterLab is setup?
 
