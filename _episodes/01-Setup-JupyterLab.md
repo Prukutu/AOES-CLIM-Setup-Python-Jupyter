@@ -142,7 +142,8 @@ You may have others but we will start by using the default "Python 3" environmen
 
 ## What do I do now that JupyterLab is setup?
 
-Now that you have completed the setup process, you need to execute steps 4, 5, and 6 when you want to run JupyterLab.
+Now that you have completed the setup process, you need to execute steps 5, and 6 when you want to run JupyterLab.
+If the cola server was rebooted, you will need to execute steps 4, 5, and 6.
 
 > ## Test that you can login and launch JupyterLab
 >
