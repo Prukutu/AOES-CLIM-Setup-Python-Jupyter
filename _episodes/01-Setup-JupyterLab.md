@@ -81,7 +81,8 @@ $ kill -9 11404
 ~~~
 {: .language-bash}
 
-Kill your process with PID = 11404. The `-9` means to _kill with extreme prejudice_!
+Kill your process with PID = 11404 (you can provide a list of process ID numbers to kill all at the same time). 
+The `-9` option means to _kill with extreme prejudice_!
 
 
 #### 5. Start the Jupyter <u>client</u> on your laptop
