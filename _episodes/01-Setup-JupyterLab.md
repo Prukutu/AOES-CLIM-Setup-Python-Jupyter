@@ -4,10 +4,10 @@ teaching: 0
 exercises: 0
 questions:
 - "What is JupyterLab?"
-- "How do I setup JupyterLab on COLA computers?"
+- "How do I invoke JupyterLab from the ORC Dashboard?"
 objectives:
 - "Explain what JupyterLab is and why we are using it"
-- "Explain how to setup JupyterLab on COLA servers"
+- "Explain how to run JupyterLab on Hopper"
 - "Explain what you can do with JupyterLab"
 keypoints:
 - "JupyterLab is an interactive Python interface that is ideal for scientific work"
@@ -16,137 +16,91 @@ keypoints:
 - "Login to COLA computer with special login line: `ssh -N -L 8878:colaX.gmu.edu:8878 YOURUSERNAME@colaX.gmu.edu`"
 - "Open JupyterLab in your web browser: http://localhost:8878" 
 ---
-## Why do we need to setup another program? 
+## Why do we want to set up JupyterLab? 
 
-We have been using the Unix command line to type and execute our Python commands.  This is not a nice interface for working, especially as our codes get larger.
-We will use a browser-based interface called `JupyterLab` or `Jupyter notebook`. Jupyter notebooks are also ideal for scientific research because they make it easy to document our work, include equations in our documentation, show our analysis results, and link to other resources like journal articles. 
+We have been using the command line in a terminal window to type and execute our Python commands. 
+While it can be very handy to run either simple commands or (as we will see) big programs this way, 
+it is not a nice interface for anything in between, including when we write and debug our Python code.
+
+We will use a browser-based interface called `JupyterLab`
+which lets us create **notebooks** with **cells** containing our Python code
+as well as notes and annotations that use a simple formatting paradigm called **markdown**. 
+Jupyter notebooks are also ideal for scientific research because they make it easy to document our work, 
+include equations in our documentation, show our analysis results, 
+and link to other resources like journal articles. 
+
 Let's set it up and see what it can do!
 
-## Setup JupyterLab on COLA Computers
+## Launch JupyterLab
 
-#### 1. Login to a COLA computer (X refers to the computer number)
+#### 1. Login to the ORC Dashboard
 
-~~~
-$ ssh -Y -l YOURUSERNAME colaX.gmu.edu
-~~~
-{: .language-bash}
+From your browser, go to the [ORC dashboard](https://ondemand.orc.gmu.edu/){:target="_blank" rel="noopener"}
+and log in.
 
+#### 2. Launch JupyterLab
 
-#### 2. Load the anaconda module
-~~~
-$ module load anaconda/3
-~~~
-{: .language-bash}
+Click on the **JupyterLab** app. It will launch a process that will run your instance of JupyterLab on Hopper.
 
-#### 3. Setup a password for Jupyter.  This will be different from your COLA or Mason passwords.
+#### 3. Choose your parameters.
 
-~~~
-$ jupyter notebook --generate-config
-$ jupyter notebook password
-~~~
-{: .language-bash}
+Do not add any extra arguments, and let your partition be "interactive".
 
-#### 4. Start the Jupyter <u>server</u> with the following command (which asks for port 8878)
+Select the number of hours for your session (for in-class use, 2 hours is a good choice).
 
-~~~
-$ nohup jupyter lab --no-browser --ip=`hostname` --port=8878 &
-~~~
-{: .language-bash}
+By default for the instance size, you will get a "small" session (2 nodes, abut 4GB). 
+This should be fine for our work in class.
+However, once you start your class project, if your dataset is large or the analysis you do
+requires a lot of memory, you may want to choose "medium" or "large".
 
-`nohup` means "don't hang up", i.e., keep the process running even if your terminal session loses its connection
-(handy to prevent your work being lost, and allowing you to pick up later where you left off).
-The `&` at the end puts the process in the _background_, freeing up your command line to be used.
+#### 4. Launch your JupyterLab session
 
-> ## Pay attention here, if port 8878 is busy you might automatically get assigned a different port
-> For example: 
-> ~~~
->[I 19:01:58.026 LabApp] The Jupyter Notebook is running at:
->[I 19:01:58.026 LabApp] http://cola1.gmu.edu:8879/
-> ~~~
-{: .callout}
+As with launching your Hopper Desktop, there will be a pause of a few seconds to minutes
+while your session is set up. 
+Your list of "My Interactive Sessions" will say "starting".
 
-Check that your process is running (a good thing to do if you are not sure whether you already have a Jupyter lab session running on the server:
+Once it is ready, click the button labeled "Connect to Jupyter".
 
-~~~
-$ ps -u YORUSERNAME
-~~~
-{: .language-bash}
-
-You should see one and only one enstantiation of jupyter-lab running. 
-If you see more than one, then you should kill all the duplicate processes and relaunch the Jupyter server.
-Specific processes can be killed by their process ID (PID), e.g.:
-
-~~~
-$ kill -9 11404
-~~~
-{: .language-bash}
-
-Kill your process with PID = 11404 (you can provide a list of process ID numbers to kill all at the same time). 
-The `-9` option means to _kill with extreme prejudice_!
+Your JupyterLab session will start in a new tab in your browser.
 
 
-#### 5. Start the Jupyter <u>client</u> on your laptop
+## Your JupyterLab interface
 
-In a separate XQuartz or MobusXterm window, log into the <u>same</u> cola machine (colaX) again with the following command
+It is worth getting familiar with the JupyterLab interface. 
+[Full documentation is available online](https://jupyterlab.readthedocs.io/en/stable/user/interface.html){:target="_blank" rel="noopener"}, 
+and it is worthwhile to take the time read through it, 
+as you will probably spend a lot of time in this interface, in this class and beyond.
 
-~~~
-$ ssh -N -L 8878:colaX.gmu.edu:8878 YOURUSERNAME@colaX.gmu.edu
-~~~
-{: .language-bash}
-Nothing will appear to happen after you type your password. This is OK. You now have the Jupyter client running on your laptop. 
+We will go through the basics here.
+You should see something like this:
 
-> ## Again pay attention!
-> Make sure that in steps 4 and 5 <u>same</u> cola machine and port is being used.
-{: .callout}
+![JupyterLab interface](../fig/jupyterlab_interface.jpg)
 
+There are the following parts to the interface:
+1. A **menu bar** (here tinted blue, but yours will be white)
+  * This is very much like the menu bar on any computer app, with multiple dropdown menu options
+2. A **left side bar** that is grey and has four tabs:
+  * The **file browser** that should be open (here tinted yellow)
+  * A **listing** of open notebooks, kernels and terminals
+  * A **table of contents** for open notebooks
+  * An **extension manager**
+3. A **right side bar** that is grey and collapsed, containing:
+  * A **property inspector**
+  * A **debugger console**
+4. A **status bar** across the bottom that is also grey, which shows things like:
+  * Kernel status
+  * Number of running kernels
+  * Current editing mode
+  * Cursor position in the cell
+5. The **main work area** that is probably open to a single tab called **launcher**
+ 
+The launcher allows you to open three kinds of tabs:
+1. Python notebooks (a selection of available kernels are listed)
+2. Consoles, just like what you would open if you launched `python` in a terminal window.
+3. "Other", which includes:
+  * Terminal session launcher (yet another way to launch a terminal session on Hopper)
+  * A markdown file editor (can be a handy way to keep notes, e.g., a description of your workflow for a multi-step analysis that uses multiple notebooks and scripts)
+  * A python script editor 
+  * And some other specialized editors
 
-#### 6. Connect your Jupyter client to the Jupyter server on the COLA system
-
-Open a web browser and go to  http://localhost:8878 (again, make sure the port number is correct). You will be asked to enter the password you created in step 1.
-Jupyter will appear in your local browser.
-
-> ## What can go wrong here?
->
-> There are various errors that can happen that will not allow Jupyter to launch properly:
->
-> ~~~
-> Traceback (most recent call last): File “/homes/sknapp4/.conda/envs/aoes/lib/python3.6/site-packages/traitlets/traitlets.py”, line 528, in get value = obj._trait_values[self.name] KeyError: ‘allow_remote_access’
-> ~~~
-> {: .error}
->
-> Solution: Try launching Jupyter with the following command
->
-> ~~~
-> $ jupyter lab –no-browser –ip=’0.0.0.0’ –port=8878
-> ~~~
->
-> If you get an Invalid Credentials error, check the messages on the screen where you launched `jupyter lab ` Sometimes port 8878 is in use and it will find a different port. The error messages will tell you which port you should use.
->
-> These errors messages look like:
-> ~~~
-jupyter lab –no-browser –ip=`hostname` –port=8878 [I 14:12:20.887 LabApp] The port 8878 is already in use, trying another port.
-> ~~~
-> {: .language-bash}
->
-> Solution: Repeat step 6 using the reccomended port.
->
-{: .callout}
-
-Your Jupyter client should continue running on the COLA server until you either kill the process yourself, or that machine gets rebooted.
-However, your _client_ may stop if you lose your Internet connection, reboot your laptop, shut down your laptop, even close your laptop for more than a few minutes,... 
-But all you have to do is relaunch your client (Step 5 above) and your Jupyter browser session should re-establish itself right where you left off.
-
-#### 8. In the upper right corner, you will see your current environment. 
-You may have others but we will start by using the default "Python 3" environment.
-
-
-## What do I do now that JupyterLab is setup?
-
-Now that you have completed the setup process, you need to execute steps 5, and 6 when you want to run JupyterLab.
-If the cola server was rebooted, you will need to execute steps 4, 5, and 6.
-
-> ## Test that you can login and launch JupyterLab
->
->  Logout of COLA computers.  Login again and launch JupyterLab
->
-{: .challenge}
+We will now explore the JupyterLAb interface together in class.
