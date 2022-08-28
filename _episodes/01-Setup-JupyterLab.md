@@ -1,6 +1,6 @@
 ---
 title: "Setting up JupyterLab"
-teaching: 0
+teaching: 10
 exercises: 0
 questions:
 - "What is JupyterLab?"
@@ -16,7 +16,8 @@ keypoints:
 - "Login to COLA computer with special login line: `ssh -N -L 8878:colaX.gmu.edu:8878 YOURUSERNAME@colaX.gmu.edu`"
 - "Open JupyterLab in your web browser: http://localhost:8878" 
 ---
-## Why do we want to set up JupyterLab? 
+
+## Why do we want to use JupyterLab? 
 
 We have been using the command line in a terminal window to type and execute our Python commands. 
 While it can be very handy to run either simple commands or (as we will see) big programs this way, 
