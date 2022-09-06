@@ -11,10 +11,7 @@ objectives:
 - "Explain what you can do with JupyterLab"
 keypoints:
 - "JupyterLab is an interactive Python interface that is ideal for scientific work"
-- "Launching JupyterLab is a multi-step process"
-- "Launch the server on a COLA computer `jupyter lab --no-browser --ip=`hostname` --port=8878`"
-- "Login to COLA computer with special login line: `ssh -N -L 8878:colaX.gmu.edu:8878 YOURUSERNAME@colaX.gmu.edu`"
-- "Open JupyterLab in your web browser: http://localhost:8878" 
+- "Launching JupyterLab from the OOD Dashboard is a straightforward process"
 ---
 
 ## Why do we want to use JupyterLab? 
@@ -36,7 +33,7 @@ Let's set it up and see what it can do!
 
 #### 1. Login to the ORC Dashboard
 
-From your browser, go to the [ORC dashboard](https://ondemand.orc.gmu.edu/){:target="_blank" rel="noopener"}
+From your browser, go to the [ORC's OOD dashboard](https://ondemand.orc.gmu.edu/){:target="_blank" rel="noopener"}
 and log in.
 
 #### 2. Launch JupyterLab
@@ -64,6 +61,25 @@ Once it is ready, click the button labeled "Connect to Jupyter".
 
 Your JupyterLab session will start in a new tab in your browser.
 
+> ## Other ways to run JupyterLab
+>
+> You can launch JupyterLab directly from a terminal window on your Hopper Desktop:
+> ~~~
+> $ jupyter lab
+> ~~~
+> {: .language-bash}
+> 
+> This method has some differences from using the JupyterLab app in the Dashboard:
+> 1. Your JupyterLab session will not appear in your laptop's browser, but in a browser on your Hopper Desktop (Firefox)
+> 2. Your JupyterLab session will end when your Desktop session times out - it does not have a separate timer.
+> 3. Your JupyterLab session will run with the environment that exists in the terminal window where you lanched the command, and not in the default environment available from the Dashboard app. This can be an advantage if you need to customize your session (e.g., before starting Jupyter lab you might load key modules needed by special Python libraries).
+> 
+> JupyterLab can also be run directly from terminal windows, bypassing OOD and the Hopper Desktop completely. 
+> This involves running a private Jupyter server on Hopper and a matching client on your laptop. 
+> This appraoch requires substantially more setup (it's how JupyeterLab is run on the COLA machines), 
+> and should be used only if the other approaches are not adequate for your needs.  
+> See your instructors if you think you may need this option.
+{: .callout}
 
 ## Your JupyterLab interface
 
@@ -104,4 +120,4 @@ The launcher allows you to open three kinds of tabs:
   * A python script editor 
   * And some other specialized editors
 
-We will now explore the JupyterLAb interface together in class.
+We will now explore the JupyterLab interface together in class.
