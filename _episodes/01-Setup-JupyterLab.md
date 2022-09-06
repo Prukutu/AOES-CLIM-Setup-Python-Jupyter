@@ -1,6 +1,6 @@
 ---
 title: "Setting up JupyterLab"
-teaching: 20
+teaching: 10
 exercises: 0
 questions:
 - "What is JupyterLab?"
