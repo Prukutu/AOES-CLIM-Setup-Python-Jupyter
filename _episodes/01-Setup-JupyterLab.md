@@ -91,7 +91,7 @@ as you will probably spend a lot of time in this interface, in this class and be
 We will go through the basics here.
 You should see something like this:
 
-![JupyterLab interface](../fig/jupyterlab_interface.jpg)
+![JupyterLab interface](../fig/jupyterlab_interface.png)
 
 There are the following parts to the interface:
 1. A **menu bar** (here tinted blue, but yours will be white)
