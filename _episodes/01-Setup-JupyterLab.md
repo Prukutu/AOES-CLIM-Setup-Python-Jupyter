@@ -62,19 +62,6 @@ Once it is ready, click the button labeled "Connect to Jupyter".
 
 Your JupyterLab session will start in a new tab in your browser.
 
-> ## Other ways to run JupyterLab
->
-> You can launch JupyterLab directly from a terminal window on your Hopper Desktop:
-> ~~~
-> $ jupyter lab
-> ~~~
-> {: .language-bash}
-> 
-> This method has some differences from using the JupyterLab app in the Dashboard:
-> 1. Your JupyterLab session will not appear in your laptop's browser, but in a browser on your Hopper Desktop (Firefox)
-> 2. Your JupyterLab session will end when your Desktop session times out - it does not have a separate timer.
-> 3. Your JupyterLab session will run with the environment that exists in the terminal window where you lanched the command, and not in the default environment available from the Dashboard app. This can be an advantage if you need to customize your session (e.g., before starting Jupyter lab you might load key modules needed by special Python libraries).
-> 
 > JupyterLab can also be run directly from terminal windows, bypassing OOD and the Hopper Desktop completely. 
 > This involves running a private Jupyter server on Hopper and a matching client on your laptop. 
 > This appraoch requires substantially more setup (it's how JupyeterLab is run on the COLA machines), 
