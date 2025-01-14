@@ -5,16 +5,17 @@ exercises: 0
 questions:
 - "What is JupyterLab?"
 - "How do I invoke JupyterLab from the ORC Dashboard?"
+- "How can I use VS Code to run Jupyter Notebooks?"
 objectives:
 - "Explain what JupyterLab is and why we are using it"
-- "Explain how to run JupyterLab on Hopper"
-- "Explain what you can do with JupyterLab"
+- "Explain how to run JupyterLab and VS Code on Hopper"
+- "Explain what you can do with JupyterLab and Jupyter notebooks"
 keypoints:
 - "JupyterLab is an interactive Python interface that is ideal for scientific work"
-- "Launching JupyterLab from the OOD Dashboard is a straightforward process"
+- "Launching JupyterLab or VS Code from the OOD Dashboard is a straightforward process"
 ---
 
-## Why do we want to use JupyterLab? 
+## Why do we want to use Jupyter Notebooks in JupyterLab or VS Code? 
 
 We have been using the command line in a terminal window to type and execute our Python commands. 
 While it can be very handy to run either simple commands or (as we will see) big programs this way, 
